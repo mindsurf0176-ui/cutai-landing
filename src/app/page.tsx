@@ -92,7 +92,7 @@ export default function Home() {
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
                 <div className="w-3 h-3 rounded-full bg-green-500" />
               </div>
-              <p className="text-zinc-400 mb-4">$ cutai plan vlog.mp4 -i "무음 구간 자르고 자막 달아줘"</p>
+              <p className="text-zinc-400 mb-4">$ cutai plan vlog.mp4 -i "cut dead air and add subtitles"</p>
               <div className="text-blue-300 mb-2">🎬 Analyzing vlog.mp4...</div>
               <div className="text-zinc-300 pl-4 mb-4">
                 ✓ Detected 14 scenes<br/>
