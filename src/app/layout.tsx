@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "CutAI - Edit videos by telling it what you want",
   description: "Learn any video's editing style and apply it to yours. An open-source, local-first AI video editor.",
   icons: {
-    icon: "/icon.png",
+    icon: "/icon.svg",
   },
 };
 
