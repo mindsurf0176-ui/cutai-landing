@@ -47,14 +47,16 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Hero Demo Video Placeholder */}
+          {/* Hero Demo Video */}
           <div className="mt-20 relative mx-auto max-w-4xl rounded-2xl border border-white/10 bg-black shadow-2xl overflow-hidden aspect-video flex items-center justify-center">
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1627485937980-221c88ce04ea?q=80&w=2560&auto=format&fit=crop')] opacity-20 bg-cover bg-center mix-blend-overlay" />
-            <div className="text-center z-10 p-6 backdrop-blur-md bg-black/40 rounded-xl border border-white/10">
-              <Wand2 className="w-10 h-10 text-blue-400 mx-auto mb-4" />
-              <p className="font-mono text-sm text-blue-300 mb-2">$ cutai edit vlog.mp4 -i "remove boring parts, add subtitles, make it cinematic"</p>
-              <p className="text-zinc-400 text-sm">[ Demo Video Goes Here ]</p>
-            </div>
+            <video 
+              src="/videos/demo.mp4" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </section>
