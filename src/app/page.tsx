@@ -51,7 +51,7 @@ export default function Home() {
           {/* Hero Demo Video */}
           <div className="mt-20 relative mx-auto max-w-4xl rounded-2xl border border-white/10 bg-black shadow-2xl overflow-hidden aspect-video flex items-center justify-center">
             <video 
-              src="/videos/demo.mp4?v=9" 
+              src="/videos/demo.mp4?v=10" 
               autoPlay 
               loop 
               muted 
@@ -67,7 +67,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-4">No timeline dragging. Just ask.</h2>
+              <h2 className="text-3xl font-bold mb-4">Descript made editing like writing. We made it like talking.</h2>
               <p className="text-zinc-400 mb-6 leading-relaxed">
                 Describe your edits in plain English or Korean. CutAI analyzes your video, detects scene boundaries, and translates your intent into a concrete edit plan.
               </p>
