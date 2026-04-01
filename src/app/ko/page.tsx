@@ -51,7 +51,7 @@ export default function HomeKo() {
           {/* Hero Demo Video */}
           <div className="mt-20 relative mx-auto max-w-4xl rounded-2xl border border-white/10 bg-black shadow-2xl overflow-hidden aspect-video flex items-center justify-center">
             <video 
-              src="/videos/demo.mp4?v=4" 
+              src="/videos/demo.mp4?v=5" 
               autoPlay 
               loop 
               muted 
