@@ -7,7 +7,7 @@ export default function HomeKo() {
       <nav className="border-b border-white/5 bg-black/50 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 font-bold text-xl tracking-tight">
-            <img src="/icon.svg" className="w-8 h-8 drop-shadow-md" alt="CutAI" />
+            <img src="/icon.svg" className="w-8 h-8 drop-shadow-md" alt="CutAI Logo" />
             CutAI
           </div>
           <div className="flex items-center gap-4">
