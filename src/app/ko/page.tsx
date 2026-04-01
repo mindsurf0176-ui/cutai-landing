@@ -1,7 +1,7 @@
 "use client";
 
 import { Download, Sparkles, Zap, Shield, Scissors, Type, Palette, Music, ArrowRight, Terminal, Check } from "lucide-react";
-import { Animate, FloatingGlow } from "@/components/motion";
+import { Animate, FloatingGlow, TypingRotation, CountUp, DemoVideo } from "@/components/motion";
 
 export default function HomeKo() {
   return (
@@ -31,9 +31,20 @@ export default function HomeKo() {
             <h1 className="text-[56px] md:text-[80px] font-black tracking-[-0.03em] mb-8 leading-[0.95] text-zinc-900 break-keep">
               편집 없는<br />영상 편집.
             </h1>
-            <p className="text-xl md:text-2xl text-zinc-400 mb-12 max-w-xl mx-auto leading-relaxed break-keep font-light">
-              원하는 걸 말하면 됩니다.<br />AI가 컷, 자막, 색보정, 음악까지.
+            <p className="text-xl md:text-2xl text-zinc-400 mb-4 max-w-xl mx-auto leading-relaxed break-keep font-light">
+              원하는 걸 말하면 됩니다.
             </p>
+            <div className="h-10 mb-8 flex items-center justify-center">
+              <span className="text-lg md:text-xl text-indigo-600 font-medium">
+                <TypingRotation phrases={[
+                  "\"무음 구간 다 잘라줘\"",
+                  "\"자막 넣어줘, 시네마틱하게\"",
+                  "\"인트로 5초로 줄여\"",
+                  "\"색감 따뜻하게 바꿔줘\"",
+                  "\"배경음악 넣어줘\"",
+                ]} />
+              </span>
+            </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href="#download" className="flex items-center gap-2.5 bg-zinc-900 text-white px-8 py-4 rounded-2xl font-semibold text-[15px] hover:bg-zinc-800 transition-all hover:shadow-2xl hover:shadow-zinc-900/20 active:scale-[0.98]">
                 <Download className="w-[18px] h-[18px]" />
@@ -51,7 +62,7 @@ export default function HomeKo() {
             <div className="relative mx-auto max-w-[1100px]">
               <div className="absolute -inset-4 bg-gradient-to-b from-indigo-500/10 via-transparent to-transparent rounded-3xl blur-2xl pointer-events-none" />
               <div className="relative rounded-2xl border border-zinc-200/80 bg-zinc-950 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.3)] overflow-hidden aspect-video">
-                <video src="/videos/demo.mp4?v=10" autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                <DemoVideo src="/videos/demo.mp4?v=10" className="w-full h-full" />
               </div>
             </div>
           </Animate>
@@ -107,7 +118,7 @@ export default function HomeKo() {
                   </div>
                   <div className="p-6 space-y-5 min-h-[380px]">
                     <div className="bg-white/[0.04] border border-white/[0.06] px-5 py-3.5 rounded-xl text-white/50 text-[13px]">
-                      ✅ <span className="text-white/90 font-medium">vlog.mp4</span> 로드 완료 — 4:32, 18개 장면, 음성 인식 완료
+                      ✅ <span className="text-white/90 font-medium">vlog.mp4</span> 로드 완료 — 4:32, <CountUp target={18} suffix="개 장면" className="text-white/90 font-medium" />, 음성 인식 완료
                     </div>
                     <div className="flex justify-end">
                       <div className="bg-indigo-600 text-white px-5 py-3.5 rounded-2xl rounded-br-md max-w-[75%] text-[15px] leading-relaxed">
@@ -116,7 +127,7 @@ export default function HomeKo() {
                     </div>
                     <div className="bg-white/[0.03] border border-white/[0.06] px-5 py-5 rounded-2xl rounded-bl-md text-white/85 text-[14px] leading-[1.9]">
                       이렇게 처리할게요:<br /><br />
-                      <span className="text-indigo-400 font-mono text-xs mr-1">01</span> <span className="text-white font-medium">무음 구간 3개 제거</span> <span className="text-white/30">— 47초 단축</span><br />
+                      <span className="text-indigo-400 font-mono text-xs mr-1">01</span> <span className="text-white font-medium">무음 구간 3개 제거</span> <span className="text-white/30">— <CountUp target={47} suffix="초 단축" /></span><br />
                       <span className="text-indigo-400 font-mono text-xs mr-1">02</span> <span className="text-white font-medium">자막 삽입</span> <span className="text-white/30">— Whisper 기반</span><br />
                       <span className="text-indigo-400 font-mono text-xs mr-1">03</span> <span className="text-white font-medium">색보정</span> <span className="text-white/30">— 웜 시네마틱</span><br /><br />
                       <span className="text-white/30">바로 렌더링할까요?</span>

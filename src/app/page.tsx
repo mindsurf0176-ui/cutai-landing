@@ -1,7 +1,7 @@
 "use client";
 
 import { Download, Sparkles, Zap, Shield, Scissors, Type, Palette, Music, ArrowRight, Terminal, Check } from "lucide-react";
-import { Animate, FloatingGlow } from "@/components/motion";
+import { Animate, FloatingGlow, TypingRotation, CountUp, DemoVideo } from "@/components/motion";
 
 export default function Home() {
   return (
@@ -31,9 +31,20 @@ export default function Home() {
             <h1 className="text-[56px] md:text-[80px] font-black tracking-[-0.03em] mb-8 leading-[0.95] text-zinc-900">
               Video editing<br />without the editing.
             </h1>
-            <p className="text-xl md:text-2xl text-zinc-400 mb-12 max-w-xl mx-auto leading-relaxed font-light">
-              Just say what you want.<br />AI handles cuts, subtitles, color, music — all from one sentence.
+            <p className="text-xl md:text-2xl text-zinc-400 mb-4 max-w-xl mx-auto leading-relaxed font-light">
+              Just say what you want.
             </p>
+            <div className="h-10 mb-8 flex items-center justify-center">
+              <span className="text-lg md:text-xl text-indigo-600 font-medium">
+                <TypingRotation phrases={[
+                  "\"Remove all the dead air\"",
+                  "\"Add subtitles, cinematic style\"",
+                  "\"Cut the intro to 5 seconds\"",
+                  "\"Warm up the colors\"",
+                  "\"Add background music\"",
+                ]} />
+              </span>
+            </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href="#download" className="flex items-center gap-2.5 bg-zinc-900 text-white px-8 py-4 rounded-2xl font-semibold text-[15px] hover:bg-zinc-800 transition-all hover:shadow-2xl hover:shadow-zinc-900/20 active:scale-[0.98]">
                 <Download className="w-[18px] h-[18px]" />
@@ -50,7 +61,7 @@ export default function Home() {
             <div className="relative mx-auto max-w-[1100px]">
               <div className="absolute -inset-4 bg-gradient-to-b from-indigo-500/10 via-transparent to-transparent rounded-3xl blur-2xl pointer-events-none" />
               <div className="relative rounded-2xl border border-zinc-200/80 bg-zinc-950 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.3)] overflow-hidden aspect-video">
-                <video src="/videos/demo.mp4?v=10" autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                <DemoVideo src="/videos/demo.mp4?v=10" className="w-full h-full" />
               </div>
             </div>
           </Animate>
@@ -106,7 +117,7 @@ export default function Home() {
                   </div>
                   <div className="p-6 space-y-5 min-h-[380px]">
                     <div className="bg-white/[0.04] border border-white/[0.06] px-5 py-3.5 rounded-xl text-white/50 text-[13px]">
-                      ✅ <span className="text-white/90 font-medium">vlog.mp4</span> loaded — 4:32, 18 scenes, transcript ready
+                      ✅ <span className="text-white/90 font-medium">vlog.mp4</span> loaded — 4:32, <CountUp target={18} suffix=" scenes" className="text-white/90 font-medium" />, transcript ready
                     </div>
                     <div className="flex justify-end">
                       <div className="bg-indigo-600 text-white px-5 py-3.5 rounded-2xl rounded-br-md max-w-[75%] text-[15px] leading-relaxed">
@@ -115,7 +126,7 @@ export default function Home() {
                     </div>
                     <div className="bg-white/[0.03] border border-white/[0.06] px-5 py-5 rounded-2xl rounded-bl-md text-white/85 text-[14px] leading-[1.9]">
                       Got it. Here's what I'll do:<br /><br />
-                      <span className="text-indigo-400 font-mono text-xs mr-1">01</span> <span className="text-white font-medium">Cut 3 silent segments</span> <span className="text-white/30">— saves 47s</span><br />
+                      <span className="text-indigo-400 font-mono text-xs mr-1">01</span> <span className="text-white font-medium">Cut 3 silent segments</span> <span className="text-white/30">— saves <CountUp target={47} suffix="s" /></span><br />
                       <span className="text-indigo-400 font-mono text-xs mr-1">02</span> <span className="text-white font-medium">Burn in subtitles</span> <span className="text-white/30">— Whisper</span><br />
                       <span className="text-indigo-400 font-mono text-xs mr-1">03</span> <span className="text-white font-medium">Color grade</span> <span className="text-white/30">— warm cinematic</span><br /><br />
                       <span className="text-white/30">Ready to render?</span>
