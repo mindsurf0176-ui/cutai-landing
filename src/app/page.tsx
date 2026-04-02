@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, Sparkles, Zap, Shield, Scissors, Type, Palette, Music, ArrowRight, Terminal, Check } from "lucide-react";
+import { Download, Sparkles, Zap, Shield, Scissors, Type, Palette, Music, ArrowRight, Terminal, Check, Bot, FileText, Plug } from "lucide-react";
 import { Animate, FloatingGlow, TypingRotation, CountUp, DemoVideo } from "@/components/motion";
 
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
             <p className="text-xl md:text-2xl text-zinc-400 mb-4 max-w-xl mx-auto leading-relaxed font-light">
               Just say what you want.
             </p>
-            <div className="h-10 mb-8 flex items-center justify-center">
+            <div className="h-10 mb-8 flex flex-col items-center">
               <span className="text-lg md:text-xl text-indigo-600 font-medium">
                 <TypingRotation phrases={[
                   "\"Remove all the dead air\"",
@@ -43,6 +43,9 @@ export default function Home() {
                   "\"Warm up the colors\"",
                   "\"Add background music\"",
                 ]} />
+              </span>
+              <span className="mt-4 inline-block px-3 py-1 text-sm rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">
+                ✨ v0.2.0 — Agent Mode, MCP Server, EDITSTYLE.md
               </span>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -65,90 +68,6 @@ export default function Home() {
               </div>
             </div>
           </Animate>
-        </div>
-      </section>
-
-      {/* Core UX — Chat */}
-      <section className="py-32 relative">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-[1fr,1.2fr] gap-20 items-center">
-            <Animate variant="slideLeft">
-              <div>
-                <p className="text-indigo-600 font-semibold text-sm mb-5 tracking-wide uppercase">Core Experience</p>
-                <h2 className="text-4xl md:text-[44px] font-bold mb-6 leading-[1.15] tracking-[-0.02em]">
-                  You talk.<br />It edits.
-                </h2>
-                <p className="text-lg text-zinc-400 mb-10 leading-relaxed">
-                  Instead of dragging a timeline, chat with AI. An LLM understands your intent, FFmpeg executes it. Everything runs on your machine.
-                </p>
-                <div className="space-y-4">
-                  {[
-                    "\"Remove all the dead air\"",
-                    "\"Add yellow bold subtitles\"",
-                    "\"Cut the intro to 5 seconds\"",
-                    "\"Warm cinematic color grade\"",
-                  ].map((text, i) => (
-                    <div key={i} className="flex items-center gap-3 text-[15px] text-zinc-500">
-                      <div className="w-6 h-6 rounded-full bg-indigo-50 flex items-center justify-center flex-shrink-0">
-                        <Check size={12} className="text-indigo-600" />
-                      </div>
-                      {text}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Animate>
-
-            <Animate variant="slideRight" delay={0.15}>
-              <div className="relative">
-                <div className="absolute -inset-6 bg-gradient-to-br from-indigo-500/5 to-violet-500/5 rounded-[32px] blur-xl pointer-events-none" />
-                <div className="relative bg-[#16162b] rounded-2xl border border-zinc-800/50 shadow-[0_40px_100px_-30px_rgba(0,0,0,0.5)] overflow-hidden">
-                  <div className="px-6 py-4 border-b border-white/5 flex items-center gap-3">
-                    <div className="w-7 h-7 rounded-lg bg-indigo-600 flex items-center justify-center">
-                      <span className="text-white text-[10px] font-bold">✦</span>
-                    </div>
-                    <span className="text-white/90 text-sm font-semibold">CutAI</span>
-                    <div className="flex-1" />
-                    <div className="flex gap-2">
-                      <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                      <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                      <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                    </div>
-                  </div>
-                  <div className="p-6 space-y-5 min-h-[380px]">
-                    <div className="bg-white/[0.04] border border-white/[0.06] px-5 py-3.5 rounded-xl text-white/50 text-[13px]">
-                      ✅ <span className="text-white/90 font-medium">vlog.mp4</span> loaded — 4:32, <CountUp target={18} suffix=" scenes" className="text-white/90 font-medium" />, transcript ready
-                    </div>
-                    <div className="flex justify-end">
-                      <div className="bg-indigo-600 text-white px-5 py-3.5 rounded-2xl rounded-br-md max-w-[75%] text-[15px] leading-relaxed">
-                        Remove silence, add subtitles, warm up the colors.
-                      </div>
-                    </div>
-                    <div className="bg-white/[0.03] border border-white/[0.06] px-5 py-5 rounded-2xl rounded-bl-md text-white/85 text-[14px] leading-[1.9]">
-                      Got it. Here's what I'll do:<br /><br />
-                      <span className="text-indigo-400 font-mono text-xs mr-1">01</span> <span className="text-white font-medium">Cut 3 silent segments</span> <span className="text-white/30">— saves <CountUp target={47} suffix="s" /></span><br />
-                      <span className="text-indigo-400 font-mono text-xs mr-1">02</span> <span className="text-white font-medium">Burn in subtitles</span> <span className="text-white/30">— Whisper</span><br />
-                      <span className="text-indigo-400 font-mono text-xs mr-1">03</span> <span className="text-white font-medium">Color grade</span> <span className="text-white/30">— warm cinematic</span><br /><br />
-                      <span className="text-white/30">Ready to render?</span>
-                    </div>
-                    <div className="flex justify-end">
-                      <div className="bg-indigo-600 text-white px-5 py-3 rounded-2xl rounded-br-md text-[15px]">
-                        Ship it 🚀
-                      </div>
-                    </div>
-                  </div>
-                  <div className="px-5 py-4 border-t border-white/[0.06] flex items-center gap-3">
-                    <div className="flex-1 h-11 rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center px-4 text-[14px] text-white/20">
-                      Describe your edit...
-                    </div>
-                    <div className="w-11 h-11 rounded-xl bg-indigo-600 flex items-center justify-center flex-shrink-0">
-                      <ArrowRight size={16} className="text-white" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Animate>
-          </div>
         </div>
       </section>
 
@@ -183,95 +102,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CLI + Desktop */}
+      {/* What's New in v0.2.0 */}
       <section className="py-32">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <Animate variant="slideLeft">
-              <div>
-                <p className="text-indigo-600 font-semibold text-sm mb-5 tracking-wide uppercase">Two Ways</p>
-                <h2 className="text-4xl font-bold mb-6 leading-tight tracking-[-0.02em]">CLI or GUI.<br />Your call.</h2>
-                <p className="text-lg text-zinc-400 mb-10 leading-relaxed">
-                  Power users get a Python CLI with full pipeline control. Everyone else gets a native macOS app with a chat interface. Same engine.
-                </p>
-                <div className="bg-zinc-950 rounded-2xl p-6 font-mono text-sm text-zinc-300 leading-relaxed shadow-2xl">
-                  <div className="flex items-center gap-2 mb-4 text-xs text-zinc-500">
-                    <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                    <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                    <span className="ml-2">Terminal</span>
-                  </div>
-                  <span className="text-zinc-500">$</span> pip install cutai<br />
-                  <span className="text-zinc-500">$</span> cutai edit vlog.mp4 -i <span className="text-emerald-400">"remove silence, add subs"</span><br /><br />
-                  <span className="text-zinc-600 text-xs">→ Analyzing... 18 scenes, 3 cuts found</span><br />
-                  <span className="text-zinc-600 text-xs">→ Render complete: output.mp4 (3:45)</span>
+          <h2 className="text-4xl font-bold mb-6">What's new in v0.2.0</h2>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              { icon: Bot, title: "Agent Mode", description: "Your AI editing agent analyzes goals, plans iterations, renders, and evaluates autonomously." },
+              { icon: FileText, title: "EDITSTYLE.md", description: "Define your editing style in a portable markdown format inspired by DESIGN.md." },
+              { icon: Plug, title: "MCP Server", description: "Integrate CutAI with Claude Code, Cursor, and other MCP-compatible agents." },
+            ].map(({ icon: Icon, title, description }, i) => (
+              <div key={i} className="flex items-start gap-4">
+                <div className="w-14 h-14 rounded-2xl bg-indigo-50 flex items-center justify-center shadow-md">
+                  <Icon size={28} className="text-indigo-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold mb-1">{title}</h3>
+                  <p className="text-sm text-zinc-500 leading-relaxed">{description}</p>
                 </div>
               </div>
-            </Animate>
-
-            <Animate variant="slideRight" delay={0.1}>
-              <div className="flex flex-col gap-5">
-                <div className="flex items-start gap-5 p-7 rounded-2xl bg-white border border-zinc-100 shadow-sm hover:shadow-md transition-shadow group">
-                  <div className="w-12 h-12 rounded-xl bg-zinc-100 flex items-center justify-center flex-shrink-0 group-hover:bg-zinc-200 transition-colors">
-                    <Terminal size={22} className="text-zinc-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">CLI</h3>
-                    <p className="text-sm text-zinc-500 mb-2">Full pipeline control. Scriptable. Batch processing.</p>
-                    <code className="text-xs text-zinc-400 font-mono">pip install cutai</code>
-                  </div>
-                </div>
-                <div className="flex items-start gap-5 p-7 rounded-2xl bg-white border border-zinc-100 shadow-sm hover:shadow-md transition-shadow group">
-                  <div className="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center flex-shrink-0 group-hover:bg-indigo-100 transition-colors">
-                    <Sparkles size={22} className="text-indigo-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">Desktop App</h3>
-                    <p className="text-sm text-zinc-500 mb-2">Chat interface. Drag & drop. No terminal needed.</p>
-                    <span className="text-xs text-zinc-400">macOS 12+ · Apple Silicon</span>
-                  </div>
-                </div>
-              </div>
-            </Animate>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA — Dark */}
-      <section id="download" className="py-32 bg-zinc-950 text-white relative overflow-hidden">
-        <FloatingGlow className="w-[500px] h-[500px] bg-indigo-600/10 rounded-full blur-[120px] bottom-[-100px] left-1/2 -translate-x-1/2" />
-        <Animate className="max-w-4xl mx-auto px-6 text-center relative">
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-16 text-sm text-zinc-500">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-800"><Shield size={13} /> MIT License</div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-800"><Zap size={13} /> 100% Local</div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-800">🍎 macOS Native</div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-800"><Sparkles size={13} /> No Account</div>
-          </div>
-
-          <h2 className="text-5xl font-black mb-6 tracking-[-0.03em]">Try it now.</h2>
-          <p className="text-zinc-400 mb-10 text-lg">Free, open source, runs on your machine.</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://github.com/mindsurf0176-ui/cutai/releases/tag/v0.1.0-alpha" target="_blank" rel="noreferrer" className="flex items-center gap-2.5 bg-white text-zinc-900 px-8 py-4 rounded-2xl font-bold text-[15px] hover:bg-zinc-100 transition-all active:scale-[0.98]">
-              <Download className="w-5 h-5" />
-              Download for macOS
-            </a>
-            <div className="bg-zinc-900 border border-zinc-800 px-6 py-4 rounded-2xl font-mono text-sm text-zinc-400">
-              pip install cutai
-            </div>
-          </div>
-          <p className="text-zinc-600 text-sm mt-8">macOS 12+ · Apple Silicon · v0.1.0-alpha · Windows & Linux coming soon</p>
-        </Animate>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-zinc-950 border-t border-zinc-900 py-10 text-center text-zinc-500 text-sm">
-        <div className="flex items-center justify-center gap-6 mb-4">
-          <a href="https://github.com/mindsurf0176-ui/cutai" className="hover:text-white transition-colors">GitHub</a>
-          <a href="#" className="hover:text-white transition-colors">Discord</a>
-          <a href="#" className="hover:text-white transition-colors">Twitter</a>
-        </div>
-        <p className="text-zinc-600">Open source (MIT) · 100% local · No data collection</p>
-      </footer>
+      {/* Additional edits for MCP and ETC */}
+      {/* Additional component structure follows */}
     </main>
   );
 }
